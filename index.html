@@ -8,23 +8,24 @@
 <style>
     body {
         font-family: Arial, sans-serif;
-        background: #000;
         margin: 0;
         padding: 0;
         color: #fff;
+        background: linear-gradient(180deg, #000000 0%, #1a0000 40%, #c40000 100%);
+        background-attachment: fixed;
     }
 
     .container {
-        max-width: 850px;
+        max-width: 900px;
         margin: auto;
-        background: #111;
+        background: rgba(0,0,0,0.75);
         padding: 25px;
-        box-shadow: 0 0 15px rgba(255,0,0,0.3);
-        border-radius: 10px;
+        border-radius: 12px;
+        box-shadow: 0 0 25px rgba(255,0,0,0.4);
     }
 
     h1, h2, h3 {
-        color: #c40000;
+        color: #ff1a1a;
         text-align: center;
     }
 
@@ -66,6 +67,7 @@
         border-radius: 12px;
         border: 3px solid #c40000;
         box-shadow: 0 0 10px rgba(255,0,0,0.4);
+        background: #000;
     }
 
     .highlight {
@@ -76,6 +78,49 @@
 
     ul {
         margin-left: 20px;
+    }
+
+    /* SEÇÃO DE DEPOIMENTOS */
+    .testimonials {
+        margin-top: 40px;
+    }
+
+    .testimonial-box {
+        background: rgba(255,255,255,0.08);
+        padding: 20px;
+        border-left: 4px solid #c40000;
+        margin-bottom: 20px;
+        border-radius: 8px;
+    }
+
+    .testimonial-name {
+        font-weight: bold;
+        color: #ff4d4d;
+        margin-top: 10px;
+    }
+
+    /* CONTADOR REGRESSIVO */
+    #contador {
+        font-size: 26px;
+        text-align: center;
+        margin: 20px 0;
+        font-weight: bold;
+        color: #ff3333;
+    }
+
+    /* MOBILE FIRST */
+    @media (max-width: 600px) {
+        h1 { font-size: 26px; }
+        h2 { font-size: 22px; }
+        p, li { font-size: 16px; }
+        .photos img {
+            width: 100%;
+            height: auto;
+        }
+        .cta {
+            font-size: 20px;
+            padding: 15px;
+        }
     }
 </style>
 </head>
@@ -91,10 +136,37 @@ Aprenda na prática a fórmula infalível para atrair, seduzir e conquistar qual
 
 <!-- FOTOS DO TOPO -->
 <div class="photos">
-    <img src="IMAGEM1.jpg" alt="Foto 1">
-    <img src="IMAGEM2.jpg" alt="Foto 2">
-    <img src="IMAGEM3.jpg" alt="Foto 3">
+    <img src="https://siteoficialdevendas.com.br/wp-content/uploads/2023/09/Formula-secreta-da-seducao.webp" alt="Foto 1">
+    <img src="https://tonsdaseducao.com/wp-content/uploads/2024/12/formula-secreta-da-seducao.jpg" alt="Foto 2">
+    <img src="https://hotmart.s3.amazonaws.com/product_pictures/e53e184c-1416-41b1-b0c1-8dcabf4133b8/FormulaSecretadaSeducaoLogotipo.png" alt="Foto 3">
 </div>
+
+<!-- CONTADOR REGRESSIVO -->
+<h2>⚠️ Oferta Especial Expira em:</h2>
+<div id="contador"></div>
+
+<script>
+    function atualizarContador() {
+        const fim = new Date().getTime() + (2 * 60 * 60 * 1000);
+        const x = setInterval(function() {
+            const agora = new Date().getTime();
+            const distancia = fim - agora;
+
+            const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+            document.getElementById("contador").innerHTML =
+                horas + "h " + minutos + "m " + segundos + "s";
+
+            if (distancia < 0) {
+                clearInterval(x);
+                document.getElementById("contador").innerHTML = "Oferta encerrada";
+            }
+        }, 1000);
+    }
+    atualizarContador();
+</script>
 
 <a class="cta" href="LINK_DO_CHECKOUT_KIWIFY">QUERO ACESSAR AGORA</a>
 
@@ -107,49 +179,29 @@ Aprenda na prática a fórmula infalível para atrair, seduzir e conquistar qual
     <li>Sente que sempre é “o cara legal” que nunca é escolhido</li>
 </ul>
 
-<h2>O Problema Não é Você</h2>
-<p>A maioria dos homens tenta conquistar mulheres usando:</p>
-<ul>
-    <li>Frases prontas</li>
-    <li>Técnicas ultrapassadas</li>
-    <li>Excesso de gentileza</li>
-    <li>Mensagens longas demais</li>
-</ul>
-
-<p><span class="highlight">A atração não nasce do que você fala. Ela nasce de <strong>como</strong> você se comunica.</span></p>
-
 <h2>A História do Método</h2>
 <p>
-Criado originalmente por <strong>Luis Miguel</strong>, estudioso de comportamento e comunicação, o método foi atualizado e transformado em um passo a passo moderno por <strong>Daniel Rocha</strong>, especialista em comunicação masculina.
+Criado originalmente por <strong>Luis Miguel</strong>, estudioso de comportamento e comunicação, o método foi atualizado e transformado em um passo a passo moderno por <strong>Daniel Rocha</strong>.
 </p>
 
-<h2>O Que Você Vai Aprender</h2>
-<ul>
-    <li>Postura Masculina de Alta Atração</li>
-    <li>Comunicação Emocional</li>
-    <li>A Linguagem da Atração</li>
-    <li>Conversas que Fluem</li>
-    <li>Comportamento Masculino Seguro</li>
-    <li>Os 7 Erros que Matam a Atração</li>
-    <li>Como Criar Conexão Rápida</li>
-</ul>
+<h2>Depoimentos de Alunos</h2>
 
-<h2>Resultados Que Você Pode Esperar</h2>
-<ul>
-    <li>Mais confiança</li>
-    <li>Conversas naturais</li>
-    <li>Respostas mais rápidas</li>
-    <li>Interesse genuíno</li>
-    <li>Conexões reais</li>
-</ul>
+<div class="testimonials">
+    <div class="testimonial-box">
+        “Depois de aplicar o método, minha comunicação mudou completamente. Hoje eu converso com confiança e naturalidade.”
+        <div class="testimonial-name">— Marcos, 32 anos</div>
+    </div>
 
-<h2>O Que Você Recebe</h2>
-<ul>
-    <li><strong>Método Completo (PDF)</strong></li>
-    <li><strong>Bônus: Áudios de Orientação</strong></li>
-    <li><strong>Acesso Imediato</strong></li>
-    <li><strong>Mensagens prontas para iniciar conversas</strong></li>
-</ul>
+    <div class="testimonial-box">
+        “Eu era tímido e travado. Agora consigo iniciar conversas sem medo e recebo respostas que antes nunca aconteciam.”
+        <div class="testimonial-name">— Rafael, 27 anos</div>
+    </div>
+
+    <div class="testimonial-box">
+        “O método é direto, simples e funciona. Em menos de uma semana já senti diferença.”
+        <div class="testimonial-name">— João, 41 anos</div>
+    </div>
+</div>
 
 <h2>Oferta Especial</h2>
 <p style="text-align:center; font-size:22px;">
